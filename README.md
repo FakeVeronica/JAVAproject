@@ -1,3 +1,12 @@
+Testing
+Your submission will be tested (in part) by unpacking the .zip file, copying in the `test` package provided in the project template (overwriting any existing directory in your submission), moving into the `src` directory, and compiling and running the tests using commands equivalent to the following (example shows running in a Linux shell):
+> cd src
+src> javac **/*.java
+src> java test.Test
+Running the tests will output a summary of the test results, including lines summarizing the number of tests passed for each package, and an estimate of your mark for that section, as well as overall. There is no need for any of your code to print anything, and doing so may interfere with the test output, which may affect your mark.
+Since the `test` package will be overwritten, anything you submit in the test package may be erased. There is no need to modify anything in the `test` package in the course of this project. If you do so, you are encouraged to make sure that your code still passes the unmodified tests.
+
+
 src
 
 ├── itertools
