@@ -62,7 +62,7 @@ public class Itertools {
      * @return The reverse of the given iterator.
      */
     public static <T> Iterator<T> reversed(DoubleEndedIterator<T> it) {
-        // task2
+        // TASK(2): Implement reversed
         return new Iterator<T>() {
             private DoubleEndedIterator<T> iterator = it;
     
@@ -97,7 +97,7 @@ public class Itertools {
      * @return An iterator over the elements of `it` with elements not satisfying `pred` removed.
      */
     public static <T> Iterator<T> filter(Iterator<T> it, Predicate<T> pred) {
-        // task 3
+        // TASK(3): Implement filter
         return new Iterator<T>() {
             private T nextElement = null;
             private boolean hasNext = false;
@@ -154,7 +154,7 @@ public class Itertools {
      * @return An iterator over the results of applying `f` to each element in `it`.
      */
     public static <T, R> Iterator<R> map(Iterator<T> it, Function<T, R> f) {
-        //task 4
+        //TASK(4): Implement map
         return new Iterator<R>() {
             private Iterator<T> iterator = it;
             
@@ -182,7 +182,7 @@ public class Itertools {
      * @return An iterator over the results of applying `f` to each element in `it`.
      */
     public static <T, R> DoubleEndedIterator<R> map(DoubleEndedIterator<T> it, Function<T, R> f) {
-        // task5
+        // TASK(5): Implement map
         return new DoubleEndedIterator<R>() {
             private DoubleEndedIterator<T> iterator = it;
     
@@ -232,7 +232,7 @@ public class Itertools {
      * @return An iterator over the result of combining elements from `lit` and `rit` using `f`.
      */
     public static <T, U, R> Iterator<R> zip(Iterator<T> lit, Iterator<U> rit, BiFunction<T, U, R> f) {
-        // task 6
+        // TASK(6): Implement zip
         return new Iterator<R>() {
             @Override
             public boolean hasNext() {
