@@ -44,7 +44,7 @@ Clarifications
 
 2024-05-07: Added note about globstar support in bash.
 
-2024-05-13: Added note encouraging students to read the provided code.
+2024-05-13: Added note encouraging people to read the provided code.
 
 2024-05-13: Added note about no third-party dependencies, import from Java standard library only.
 
