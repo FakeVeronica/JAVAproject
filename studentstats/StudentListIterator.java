@@ -48,6 +48,7 @@ public class StudentListIterator implements DoubleEndedIterator<Student> {
      * @param list The API interface.
      */
     public StudentListIterator(StudentList list) {
+        // TASK(8.3): Implement StudentListIterator
         this(list, 3);
     }
 
@@ -72,6 +73,7 @@ public class StudentListIterator implements DoubleEndedIterator<Student> {
 
     @Override
     public boolean hasNext() {
+        // TASK(8.4): Implement StudentListIterator
         if (currentPage == null || currentIndex >= currentPage.length) {
             if (currentPageNumber >= studentList.getNumPages() - 1) {
                 return false;
