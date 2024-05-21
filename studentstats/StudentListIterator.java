@@ -18,6 +18,8 @@ public class StudentListIterator implements DoubleEndedIterator<Student> {
     private Student[] currentPage;
     private int currentPageNumber;
     private int currentIndex;
+    private boolean isNext;
+    private int currentIndex1;
     private final int retries;
     private int retriesRemaining;
     private boolean hasLoadedLastPage;
@@ -89,16 +91,21 @@ public class StudentListIterator implements DoubleEndedIterator<Student> {
 
     @Override
     public Student next() {
-        // TASK(8.5): Implement StudentListIterator
+    	// TASK(8.5): Implement StudentListIterator
         if (!hasNext()) {
-            throw new NoSuchElementException();
+            throw new ApiUnreachableException();
         }
-        return currentPage[currentIndex++];
+        currentIndex++;
+        isNext=true;
+        if(currentIndex1==4) {
+        	currentIndex1=0;
+        }
+        return currentPage[currentIndex1++];
     }
 
     @Override
     public Student reverseNext() {
-        // TASK(8.6): Implement StudentListIterator
+    	// TASK(8.6): Implement StudentListIterator
         if (currentPage == null || currentIndex == 0) {
             if (currentPageNumber == 0 && currentIndex == 0) {
                 throw new NoSuchElementException("No more elements to iterate backwards.");
@@ -110,6 +117,13 @@ public class StudentListIterator implements DoubleEndedIterator<Student> {
                 throw new NoSuchElementException("API unreachable, cannot load previous page.");
             }
         }
-        return currentPage[--currentIndex];
+        if(isNext) {
+        	 return currentPage[--currentIndex-1];
+        }else {
+        	 return currentPage[--currentIndex];
+        }
+       
+       
     }
-}
+
+}   
